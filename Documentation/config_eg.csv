@@ -1,0 +1,19 @@
+# Singleproduct  12 
+CHARTS,GDP,MONEY,PRICE,DNS,EMPLOYMENT
+Govt,Erewhon,CMB,0,250,20
+Bank,CMB,Erewhon,250,250
+Farm,Farm1,Erewhon,CMB,Food,50,1,300,300
+MarketMaker,Market,Erewhon,CMB,Food,50,300,200
+BidSell,Labour,Erewhon,CMB,Labour,0,400,200
+Person,A0,Erewhon,CMB,5,10,310,210
+Need,A0,Food,1,2,1,1
+Person,A1,Erewhon,CMB,5,10,310,210
+Need,A1,Food,1,2,1,1
+Person,A2,Erewhon,CMB,5,10,310,210
+Need,A2,Food,1,2,1,1
+Person,A3,Erewhon,CMB,5,10,310,210
+Need,A3,Food,1,2,1,1
+Person,A4,Erewhon,CMB,5,10,310,210
+Need,A4,Food,1,2,1,1
+Person,A5,Erewhon,CMB,5,10,310,210
+Need,A5,Food,1,2,1,1

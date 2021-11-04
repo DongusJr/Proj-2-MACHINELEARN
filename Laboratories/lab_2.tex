@@ -1,0 +1,102 @@
+\documentclass{article}
+\usepackage[margin=0.75in]{geometry}
+\usepackage{graphicx} 
+\usepackage{natbib} 
+\usepackage{amsmath} 
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs
+\addtolength{\topmargin}{-0.40in}
+\usepackage[parfill]{parskip}
+\usepackage{datetime}
+\usepackage{fancyhdr}
+\pagestyle{fancyplain}
+\fancyhead{}
+\fancyfoot[L]{}
+\fancyfoot[C]{FSAA 2020 Laboratory 2}
+\fancyfoot[R]{\thepage}
+
+%\usepackage{times} % Uncomment to use the Times New Roman font
+
+%----------------------------------------------------------------------------------------
+%	DOCUMENT INFORMATION
+%----------------------------------------------------------------------------------------
+
+\title{Laboratory 2 : Simple Markets}
+%\author{Jacky Mallett}
+
+\begin{document}
+\newdate{date}{28}{04}{2020}
+\date{\displaydate{date}}
+\maketitle % Insert the title, author and date
+
+% If you wish to include an abstract, uncomment the lines below
+% \begin{abstract}
+% Abstract text
+% \end{abstract}
+
+%----------------------------------------------------------------------------------------
+%	SECTION 1
+%----------------------------------------------------------------------------------------
+
+\section*{\centering Objectives}
+Exploration of market pricing in very simple simulations using the
+experimental method.
+
+\subsection*{Tips}
+In theory markets set prices according to supply and demand. However,
+both of these are represented through monetary transactions, which
+means the local availability of money is a critical element in 
+simulation behaviour.
+
+Click on the Farm to see details of production. Note that the Output:Labour is the amount producted per worker.
+
+% If you have more than one objective, uncomment the below:
+%\begin{description}
+%\item[First Objective] \hfill \\
+%Objective 1 text
+%\item[Second Objective] \hfill \\
+%Objective 2 text
+%\end{description}
+
+%\subsection{Definitions}
+%\label{definitions}
+%\begin{description}
+%\item[Stoichiometry]
+%The relationship between the relative quantities of substances taking part in a reaction or forming a compound, typically a ratio of whole integers.
+%\item[Atomic mass]
+%The mass of an atom of a chemical element expressed in atomic mass units. It is approximately equivalent to the number of protons and neutrons in the atom (the mass number) or to the average number allowing for the relative abundances of different isotopes. 
+%\end{description} 
+ 
+%----------------------------------------------------------------------------------------
+%	SECTION 2
+%----------------------------------------------------------------------------------------
+
+\subsection*{Simple Market Experiment}
+\begin{enumerate}
+\item Drag and drop a Bank from the left hand side menu onto the main srceen.
+\item Drag and drop a Farm from the left hand side menu onto the main screen.
+\item Add 10 workers using lower right hand side (click inside box to bring up menu)
+\item Using the "Select Charts" menu (click on the Charts), select Production,Consumption, Prices, Unemployed and turn off all other charts.
+\item Step forward 1 month.
+\end{enumerate}
+\paragraph{What happens and why?}
+
+\paragraph{How often are the workers being paid?}
+\vspace{3cm}
+\newpage
+\subsection*{Partial Equilibrium}
+\paragraph{First}
+Work out a combination of workers, production, and prices that will
+satisfy partial equilbrium.
+\vspace{5cm}
+\paragraph{Second}
+Create a simulation with these parameters. What happens?
+\vspace{2cm}
+
+\paragraph{Third}
+Run a series of experiments using the above simulation, but 
+varying the amount consumed and the amount stored and list the results.
+\vspace{5cm}
+\subsection*{Optional}
+What happens if there is more than 1 Farm?
+\end{document}

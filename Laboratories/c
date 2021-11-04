@@ -1,0 +1,8 @@
+#latex lab_1.tex
+#latex lab_2.tex
+#latex lab_3.tex
+latex lab_6.tex
+#dvipdf lab_1.dvi
+#dvipdf lab_2.dvi
+#dvipdf lab_3.dvi
+dvipdf lab_6.dvi

@@ -1,0 +1,32 @@
+# debug on
+load configs/stock_base2.json
+set seed
+
+addagent StockExchange Bank-4 name=TSE seats=10 verbose=
+
+addagent StockMarket Bank-4 exchange=TSE ipo=40
+addagent StockMarket Bank-4 exchange=TSE ipo=40
+addagent StockMarket Bank-4 exchange=TSE ipo=40
+addagent StockMarket Bank-4 exchange=TSE ipo=40
+addagent StockMarket Bank-4 exchange=TSE ipo=40
+addagent StockMarket Bank-4 exchange=TSE ipo=40
+addagent StockMarket Bank-4 exchange=TSE ipo=40
+addagent StockMarket Bank-4 exchange=TSE ipo=40
+addagent StockMarket Bank-4 exchange=TSE ipo=40
+addagent StockMarket Bank-4 exchange=TSE ipo=40
+
+addagent InvestmentCompany Bank-4 exchange=TSE initialDeposit=500 strategy=DEFAULT offeredSalary=0
+addagent InvestmentCompany Bank-4 exchange=TSE initialDeposit=500 strategy=DEFAULT offeredSalary=0
+addagent InvestmentCompany Bank-4 exchange=TSE initialDeposit=500 strategy=RANDOM offeredSalary=0
+addagent InvestmentCompany Bank-4 exchange=TSE initialDeposit=500 strategy=RANDOM offeredSalary=0
+addagent InvestmentCompany Bank-4 exchange=TSE initialDeposit=500 strategy=RANDOM offeredSalary=0
+
+repeat 50 addagent StockInvestor Bank-4
+
+setbaserate 2
+set maxdatapoints 12000
+steps 12000
+wait 700
+
+savechartdata /home/throstur/projects/threadneedle/TN_testrunner/data_gen/10s_5p_1e_140
+exit

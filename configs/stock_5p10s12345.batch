@@ -1,0 +1,22 @@
+# debug on
+# addagent BaselBank
+load configs/stock_base.json
+set seed 12345
+addagent StockExchange Bank-4 name=TSE
+addagent StockMarket Bank-4 exchange=TSE name=AAPL ipo=50
+addagent StockMarket Bank-4 exchange=TSE name=BEAR ipo=50
+addagent StockMarket Bank-4 exchange=TSE name=CAFE ipo=50
+addagent StockMarket Bank-4 exchange=TSE name=CATS ipo=50
+addagent StockMarket Bank-4 exchange=TSE name=DOGS ipo=50
+addagent StockMarket Bank-4 exchange=TSE name=FOOO ipo=50
+addagent StockMarket Bank-4 exchange=TSE name=GOOG ipo=50
+addagent StockMarket Bank-4 exchange=TSE name=OILS ipo=50
+addagent StockMarket Bank-4 exchange=TSE name=SMUU ipo=50
+addagent StockMarket Bank-4 exchange=TSE name=XANI ipo=50
+addagent InvestmentCompany Bank-4 exchange=TSE initialDeposit=1000 strategy=RANDOM name=R0
+addagent InvestmentCompany Bank-4 exchange=TSE initialDeposit=1000 strategy=RANDOM name=R1
+addagent InvestmentCompany Bank-4 exchange=TSE initialDeposit=1000 strategy=RANDOM name=R2
+addagent InvestmentCompany Bank-4 exchange=TSE initialDeposit=1000 strategy=RANDOM name=R3
+addagent InvestmentCompany Bank-4 exchange=TSE initialDeposit=1000 strategy=RANDOM name=R4
+repeat 50 addagent StockInvestor Bank-4
+step 100

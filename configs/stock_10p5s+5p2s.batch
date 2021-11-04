@@ -1,0 +1,34 @@
+# debug on
+load configs/stock_base.json
+set seed 1546352374
+
+addagent StockExchange Bank-4 name=TSE
+addagent StockExchange Bank-4 name=AUX
+
+addagent StockMarket Bank-4 exchange=TSE name=AAPL ipo=50
+addagent StockMarket Bank-4 exchange=TSE name=BEAR ipo=50
+addagent StockMarket Bank-4 exchange=TSE name=GOOG ipo=50
+addagent StockMarket Bank-4 exchange=TSE name=SMUU ipo=50
+addagent StockMarket Bank-4 exchange=TSE name=XANI ipo=50
+
+addagent StockMarket Bank-4 exchange=AUX name=CAFE ipo=100
+addagent StockMarket Bank-4 exchange=AUX name=OILS ipo=100
+
+addagent InvestmentCompany Bank-4 exchange=TSE initialDeposit=100 strategy=DEFAULT name=D0 offeredSalary=0
+addagent InvestmentCompany Bank-4 exchange=TSE initialDeposit=100 strategy=DEFAULT name=D1 offeredSalary=0
+addagent InvestmentCompany Bank-4 exchange=TSE initialDeposit=100 strategy=RANDOM name=R2 offeredSalary=0
+addagent InvestmentCompany Bank-4 exchange=TSE initialDeposit=100 strategy=RANDOM name=R3 offeredSalary=0
+addagent InvestmentCompany Bank-4 exchange=TSE initialDeposit=100 strategy=RANDOM name=R4 offeredSalary=0
+addagent InvestmentCompany Bank-4 exchange=TSE initialDeposit=100 strategy=RANDOM name=R5 offeredSalary=0
+addagent InvestmentCompany Bank-4 exchange=TSE initialDeposit=100 strategy=RANDOM name=R6 offeredSalary=0
+addagent InvestmentCompany Bank-4 exchange=TSE initialDeposit=100 strategy=RANDOM name=R7 offeredSalary=0
+addagent InvestmentCompany Bank-4 exchange=TSE initialDeposit=100 strategy=RANDOM name=R8 offeredSalary=0
+addagent InvestmentCompany Bank-4 exchange=TSE initialDeposit=100 strategy=RANDOM name=R9 offeredSalary=0
+
+addagent InvestmentCompany Bank-4 exchange=AUX initialDeposit=1000 strategy=DEFAULT name=A0 offeredSalary=0
+addagent InvestmentCompany Bank-4 exchange=AUX initialDeposit=100 strategy=DEFAULT name=A1 offeredSalary=0
+addagent InvestmentCompany Bank-4 exchange=AUX initialDeposit=1000 strategy=RANDOM name=A2 offeredSalary=0
+addagent InvestmentCompany Bank-4 exchange=AUX initialDeposit=100 strategy=RANDOM name=A3 offeredSalary=0
+addagent InvestmentCompany Bank-4 exchange=AUX initialDeposit=100 strategy=RANDOM name=A4 offeredSalary=0
+
+repeat 100 addagent StockInvestor Bank-4 initialDeposit=100

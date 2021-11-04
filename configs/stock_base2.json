@@ -1,0 +1,10 @@
+{
+ "description" : "",
+ "GsonAgent" : 
+ [ 
+  {"clss":"BaselGovt","json":"{\"country\":\"Erewhon\",\"capitalPct\":20.0,\"name\":\"Erewhon\",\"initialDeposit\":100,\"bankname\":\"Central Bank\",\"x\":0.0,\"y\":0.0,\"defaultProb\":0.0}"},
+ {"clss":"Bank","json":"{\"sharePrice\":10,\"capitalPct\":0.2,\"capitalDividend\":0.0,\"capitalSteps\":12,\"interestRateDelta\":0,\"writeOffLimit\":6,\"lossProvisionPct\":0.01,\"labourInput\":0,\"name\":\"Bank-4\",\"initialDeposit\":0,\"bankname\":\"\",\"x\":192.0,\"y\":125.0,\"defaultProb\":0.0,\"regionName\":\"\"}"},
+  {"clss":"LabourMarket","json":"{\"product\":\"Labour\",\"labourInput\":5,\"name\":\"Labour\",\"initialDeposit\":0,\"bankname\":\"Central Bank\",\"x\":0.0,\"y\":0.0,\"defaultProb\":0.0}"},
+  {"clss":"Saver","json":"{\"profile\":{\"needs\":[]},\"name\":\"Saver-5\",\"initialDeposit\":500000,\"bankname\":\"Bank-4\",\"x\":0.0,\"y\":0.0,\"defaultProb\":0.0}"}
+ ]
+}

@@ -1,0 +1,12 @@
+# debug on
+load configs/stock_base.json
+set seed 1546352374
+addagent StockExchange Bank-4 name=TSE verbose=
+addagent StockMarket Bank-4 exchange=TSE name=AAPL ipo=500
+addagent StockMarket Bank-4 exchange=TSE name=BEAR ipo=400
+addagent StockMarket Bank-4 exchange=TSE name=GOOG ipo=300
+addagent StockMarket Bank-4 exchange=TSE name=SMUU ipo=200
+addagent StockMarket Bank-4 exchange=TSE name=XANI ipo=100
+repeat 366 addagent InvestmentCompany Bank-4 exchange=TSE initialDeposit=500 strategy=DEFAULT offeredSalary=0
+repeat 1000 addagent InvestmentCompany Bank-4 exchange=TSE initialDeposit=500 strategy=RANDOM  offeredSalary=0
+repeat 7000 addagent StockInvestor Bank-4 initialDeposit=100

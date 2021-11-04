@@ -1,0 +1,122 @@
+Next:
+=====
+
+Copy agent command (right click, cli)
+
+Fix chart positioning
+
+Graph colours - validate
+
+Crash:
+
+1) Highlight simulation situations: labour market when full employment
+                                    govt when in debt/default
+								    companies when bankrupt.
+
+Fix: +path to run.bat
+
+Duplicate output directory detection for batch file runs
+
+Performance (improve inc_x):
+
+http://stackoverflow.com/questions/28850211/performance-issue-with-javafx-linechart-with-65000-data-points
+
+Agents:
+======
+
+NTH: Constant money bank (override lending to prevent)
+ - update Simulation doc. when done
+
+Features:
+=========
+
+Documentation.
+
+Tooltips on charts (Tooltip.install)
+
+Turn on debugging through gui
+Expose RNG
+
+Add account types to Banks:
+		savings accounts paying interest.
+
+Better configuration for loans/interest rate
+
+Click on Worker in deposit menu and view individual details
+
+Delete object...
+
+Bank presence not enforced by MarketView -> 
+     Create account at central Bank?
+     Add account move feature 
+
+Add want configuration to WorkerProfile
+
+Add ability to change initial bid/ask to market
+
+Configure to screen size
+
+Move accounts between banks
+
+Copy agent command for CLI
+
+NTH:
+====
+
+  Remove workers, markets, etc.
+  Enable/Disable agent from gui option
+
+Timed events:
+  @ step x do y 
+
+View transactions/agent from Summary screen
+
+Chart panel - select set of statistics for display
+
+Windows build.bat, run.bat - auto sense java path
+
+Bugs
+====
+
+Statistics:: inventory not working
+
+Region not set in marketview
+
+Bank/Loan viewer not cleared on load
+
+Save incorrect for workbank
+
+Reserve pctage not saved
+
+Why are  BankInvestors ending up on labourmarket  - stop this properly
+
+Refactoring
+===========
+
+Rewrite labourview to handle worker creation and configuration better.
+   - merge with bank ??
+
+ChartController - lay out grid in multiple columns when necessary
+
+SimulationEngine - make containers final?
+
+Add additional load file to entry screen - provide default markets etc.
+
+List
+====
+
+Markets:  Convert linked list to hashmap
+
+Refactoring:
+
+Waiting for Java 9:
+  Cell spanning
+
+Futures:
+========
+
+Multiple markets containers:
+   will require capture to config file in order to regenerate when
+   being reloaded.
+   markets : id {list of users} {list of container markets}`
+

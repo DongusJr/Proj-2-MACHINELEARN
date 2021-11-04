@@ -1,0 +1,2 @@
+frb_2b_1.json   Two banks, 50 borrowers, 12 step loan period
+                Shows oscillations owing to repayment > new lending

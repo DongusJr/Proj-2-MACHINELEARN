@@ -1,0 +1,10 @@
+# debug on
+#addagent BaselBank
+#addagent StockExchange name=ThreadSE
+#addagent StockMarket exchange=ThreadSE name=AAPL ipo=200
+#addagent StockMarket exchange=ThreadSE name=GOOG ipo=100
+#addagent InvestmentCompany exchange=ThreadSE initialDeposit=550
+#addagent InvestmentCompany exchange=ThreadSE initialDeposit=450
+#addagent InvestmentCompany exchange=ThreadSE initialDeposit=475 strategy=RANDOM name=R1
+#addagent InvestmentCompany exchange=ThreadSE initialDeposit=475 strategy=RANDOM name=R2
+#repeat 10 addagent StockInvestor

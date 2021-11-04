@@ -1,0 +1,15 @@
+#!/bin/bash
+latex Instructions_for_Eclipse.tex
+dvipdf Instructions_for_Eclipse.dvi
+mv Instructions_for_Eclipse.pdf ../
+latex Threadneedle_Intro.tex
+bibtex Threadneedle_Intro;
+latex Threadneedle_Intro.tex
+dvipdf Threadneedle_Intro.dvi
+#
+latex ProgrammingGuide.tex
+dvipdf ProgrammingGuide.dvi
+#
+latex IntroToEconomicSimulation.tex
+dvipdf IntroToEconomicSimulation.dvi
+

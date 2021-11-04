@@ -1,0 +1,25 @@
+# debug on
+load configs/stock_base.json
+set seed
+addagent StockExchange Bank-4 name=TSE seats=5
+addagent StockMarket Bank-4 exchange=TSE name=AAPL ipo=50
+addagent StockMarket Bank-4 exchange=TSE name=BEAR ipo=50
+addagent StockMarket Bank-4 exchange=TSE name=CAFE ipo=50
+addagent StockMarket Bank-4 exchange=TSE name=CATS ipo=50
+addagent StockMarket Bank-4 exchange=TSE name=DOGS ipo=50
+addagent StockMarket Bank-4 exchange=TSE name=FOOO ipo=50
+addagent StockMarket Bank-4 exchange=TSE name=GOOG ipo=50
+addagent StockMarket Bank-4 exchange=TSE name=OILS ipo=50
+addagent StockMarket Bank-4 exchange=TSE name=SMUU ipo=50
+addagent StockMarket Bank-4 exchange=TSE name=XANI ipo=50
+addagent InvestmentCompany Bank-4 exchange=TSE initialDeposit=1000 strategy=RANDOM name=R0 offeredSalary=0
+addagent InvestmentCompany Bank-4 exchange=TSE initialDeposit=1000 strategy=RANDOM name=R1 offeredSalary=0
+addagent InvestmentCompany Bank-4 exchange=TSE initialDeposit=1000 strategy=RANDOM name=R2 offeredSalary=0
+addagent InvestmentCompany Bank-4 exchange=TSE initialDeposit=1000 strategy=RANDOM name=R3 offeredSalary=0
+addagent InvestmentCompany Bank-4 exchange=TSE initialDeposit=1000 strategy=RANDOM name=R4 offeredSalary=0
+addagent InvestmentCompany Bank-4 exchange=TSE initialDeposit=1000 strategy=RANDOM name=R5 offeredSalary=0
+addagent InvestmentCompany Bank-4 exchange=TSE initialDeposit=1000 strategy=RANDOM name=R6 offeredSalary=0
+addagent InvestmentCompany Bank-4 exchange=TSE initialDeposit=1000 strategy=RANDOM name=R7 offeredSalary=0
+addagent InvestmentCompany Bank-4 exchange=TSE initialDeposit=1000 strategy=RANDOM name=R8 offeredSalary=0
+addagent InvestmentCompany Bank-4 exchange=TSE initialDeposit=1000 strategy=RANDOM name=R9 offeredSalary=0
+repeat 100 addagent StockInvestor Bank-4

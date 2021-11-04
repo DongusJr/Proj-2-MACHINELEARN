@@ -1,0 +1,16 @@
+
+Statistic - name is fxid /code reference
+
+SimulationEngine.
+
+Aggregate statistics are updated in the main evaluate loop. In order to handle this they are
+currently added to the aggregateStats array in the validateModel method.  There are two examples 
+already in the method, essentially immediately after the agent is added to the simulation, there is a 
+check to see if the aggregate statistic is already known to the simulation engine, and if not it is 
+added to the aggregateStats container. The new statistic should be added to this array here. (See for example, 
+Production under the Company handling.
+
+Note:
+ This is not a pattern to follow, and is scheduled to be rewritten with observable lists, real soon now.
+
+jm.

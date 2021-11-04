@@ -1,0 +1,67 @@
+\begin{lstlisting}[caption={Example Agent},label={lst:agent-template} ,
+                   language=java,
+                   basicstyle=\tiny]
+package core;                        //All agents are part of the core package
+
+import statistics.*;                 // Required if agent is using statistics
+import static statistics.Statistic.Type
+import static base.Base.*;           // Required for access to base functions
+
+import com.google.gson.annotation.Expose; // Required to save simulation
+
+
+public class ExampleAgent extends Person
+{
+  @Expose public long mySalary = 10;   // Exposed variables will be saved
+
+  /**
+   * Evaluation function for ExampleAgent will be called once every
+   * simulation step. 
+   *
+   * All agent behaviours should be called from here.
+   */
+
+   protected void evaluate(boolean report, int step)
+   {
+      super.evaluate(report, step);    // Required to invoke framework
+
+      // Assuming that funds are available these methods will make
+      // any outstanding payments for this step.
+
+      payDebts();                     // Make payments on all outstanding loans
+      payTaxes();                     // Pay any taxes
+
+   }
+
+  /**
+   * Constructor from GUI and CLI.
+   *
+   * @param name    Unique and identifying name for agent
+   * @param deposit Initial bank deposit
+   * @param govt    Government
+   * @param bank    Bank where agent's account will be created
+   */
+
+   public ExampleAgent(String name, Govt govt, Bank bank, long deposit)
+   {
+      super(name, govt, bank, deposit);
+
+      // Agent specific instantiation code can be placed here, but
+      // must be duplicated in the JSON file constructor below
+   }
+
+  /**
+   * No parameter constructor for loading from JSON simulation save files. 
+   * All @Expose'd variables will be initialised by GSON, and it is 
+   * the responsibility of the developer to set anything else correctly.
+   */
+  public Borrower()
+  {
+    super();
+  }
+
+  // Other methods may be provided or overridden as required for the agent.
+
+}
+\end{lstlisting}
+

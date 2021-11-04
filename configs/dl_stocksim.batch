@@ -1,0 +1,10 @@
+debug on
+load singlebankSimulation.json
+addagent StockExchange Bank-4 name=ThreadSE seats=100
+addagent StockMarket Bank-4 exchange=ThreadSE name=AAPL ipo=200
+addagent StockMarket Bank-4 exchange=ThreadSE name=GOOG ipo=100
+addagent InvestmentCompany Bank-4 exchange=ThreadSE initialDeposit=475 strategy=RANDOM name=R1 labourInput=2
+addagent InvestmentCompany Bank-4 exchange=ThreadSE initialDeposit=475 strategy=RANDOM name=R2 labourInput=1
+repeat 2 addagent StockInvestor Bank-4 initialDeposit=1000
+repeat 2 addagent StockInvestor Bank-4 initialDeposit=500
+addagent PythonStockInvestor Bank-4 initialDeposit=500 stockmarket=AAPL

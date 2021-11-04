@@ -1,0 +1,47 @@
+This is what I did to get Threadneedle working in Eclipse. If you know a better way, please let me know.
+
+First of all, make sure you have the latest version of Eclipse (Luna).
+
+Open Eclipse and direct it to the workspace directory of your choice 
+(I'll just call it $workspace). 
+
+Create a new Java 8 Project ($project).
+
+Eclipse will now have made a directory for your project and within that a 
+folder for your source files.
+
+Put the Threadneedle directory within this source folder so you get 
+$workspace/$project/src/Threadneedle/. 
+
+(move it from elsewhere on your computer or `git clone https://github.com/jackymallett/Threadneedle.git`)
+
+You may need to refresh the src folder in Eclipse to see the Threadneedle files.
+
+Go to the Properties of your new project and then to Java Build Path and the Libraries tab.
+
+For some reason I needed to remove the JRE System Library, and then add it back through the "Add Library" button.
+
+You also need to add all the JAR files in the $workspace/$project/src/Threadneedle/lib directory.
+
+The project should now compile.
+
+Right-click Threadneedle.java file in the gui directory and select 
+Run as Java Application (it won't work) and may crash with an exception, 
+but it will have added Threadneedle to the Run Configurations.
+
+Go to Run Configurations, click on Java Application, and select the Classpath 
+tab, select User Entries, click "Advanced" and then "Add folders" and add $workspace/$project/src/Threadneedle/resources.
+Now select the Arguments tab and change the Working Directory to $workspace/$project/src/Threadneedle.
+If you are on Mac, there may be a checkbox beneath the VM Arguments box about using the -XstartOnFirstThread argument when launching SWT that you need to untick.
+
+Now if you run Threadneedle again it should hopefully work.
+
+OSX
+---
+
+If when you try to run Threadneedle, the JVM (java) starts, but nothing else happens. There is
+a difference of opinion between eclipse and osx on how javafx interacts with previous libraries.
+
+Go back to the Run configurations panel, and go to the Arguments tab. Underneath the VM
+arguments box you should see a checkbox with the option -XstartOnFirstThread 
+Uncheck this, and it should resolve the problem.
