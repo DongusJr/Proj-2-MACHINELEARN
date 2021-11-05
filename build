@@ -10,7 +10,7 @@ CP="classes:src/resources:src:lib/*:"
 
 # Query Java Environment
 
-FX="/usr/local/javafx-sdk-11.0.2/lib"
+FX="/usr/local/javafx-sdk-17.0.1/lib"
 #FX="/usr/local/javafx-sdk-17.0.0.1/lib"
 
 if [ -z "$PATH_TO_FX" ] || [ ! -d "${PATH_TO_FX}" ]; then

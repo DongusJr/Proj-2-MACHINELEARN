@@ -8,9 +8,10 @@
 CLASSES="classes"
 CP="classes:src/resources:src:lib/*:"
 
-# Query Java Environoment
+# Query Java Environment
 
-FX="/usr/local/javafx-sdk-11.0.2/lib"
+FX="/usr/local/javafx-sdk-17.0.1/lib"
+#FX="/usr/local/javafx-sdk-17.0.0.1/lib"
 
 if [ -z "$PATH_TO_FX" ] || [ ! -d "${PATH_TO_FX}" ]; then
    PATH_TO_FX=$FX
@@ -21,19 +22,20 @@ fi
 #XL="-Xlint"
 XL=""				
 
-#if [ ! -d $CLASSES ]; then
-#   mkdir classes
-#else
-#   rm -rf classes/*
-#fi
+# if [ ! -d $CLASSES ]; then
+#    mkdir classes
+# else
+#    rm -rf classes/*
+# fi
 
-#javac $XL -d classes -cp $CP src/base/*.java
-#javac $XL --module-path $PATH_TO_FX --add-modules=javafx.fxml -d classes -cp $CP src/statistics/*.java
-#javac $XL --module-path $PATH_TO_FX --add-modules=javafx.fxml -d classes -cp $CP -parameters $XL src/core/*.java
-#javac $XL --module-path $PATH_TO_FX -d classes -cp $CP src/agents/*.java
-#javac $XL --module-path $PATH_TO_FX --add-modules=javafx.fxml,javafx.controls,javafx.swing -d classes -cp $CP src/charts/*.java
-#javac $XL --module-path $PATH_TO_FX --add-modules=javafx.fxml,javafx.controls -d classes -cp $CP src/gui/*.java
+# javac $XL -d classes -cp $CP src/base/*.java
+# javac $XL --module-path $PATH_TO_FX --add-modules=javafx.fxml -d classes -cp $CP src/statistics/*.java
+# javac $XL --module-path $PATH_TO_FX --add-modules=javafx.fxml -d classes -cp $CP -parameters $XL src/core/*.java
+# javac $XL --module-path $PATH_TO_FX -d classes -cp $CP src/agents/*.java
+# javac $XL --module-path $PATH_TO_FX --add-modules=javafx.fxml,javafx.controls,javafx.swing -d classes -cp $CP src/charts/*.java
+# javac $XL --module-path $PATH_TO_FX --add-modules=javafx.fxml,javafx.controls -d classes -cp $CP src/gui/*.java
 
 # Pass parameters through to Threadneedle. 
 
-java -classpath $CP --module-path $PATH_TO_FX --add-modules=javafx.fxml,javafx.controls,javafx.swing  gui.Threadneedle $*
+#java -classpath $CP --module-path $PATH_TO_FX --add-modules=javafx.fxml,javafx.controls gui.Threadneedle --cl $*
+java -classpath $CP --module-path $PATH_TO_FX --add-modules=javafx.fxml,javafx.controls,javafx.swing gui.Threadneedle $*

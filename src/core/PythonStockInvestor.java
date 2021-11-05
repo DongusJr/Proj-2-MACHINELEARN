@@ -39,7 +39,7 @@ public class PythonStockInvestor extends StockInvestor
         this.isZombie = isZombie;
       }
   }
-  
+
   public static interface IPythonStockInvestor {
       public String getNextAction(int step, String agentId, State s);
   }
@@ -54,6 +54,7 @@ public class PythonStockInvestor extends StockInvestor
     State s;
     if (stockMarket != null) {
       s = new State(getDeposit(), getDebt(), getShareholding(stockMarket.name), stockMarket.getBidPrice(), stockMarket.getAskPrice(), getBank().zombie);
+      System.out.println(s.deposit);
       String action = pythonStockInvestor.getNextAction(step, this.name, s);
       System.out.println(name + ": action =" + action);
       if (action.equals("sellShares")) {
@@ -70,6 +71,9 @@ public class PythonStockInvestor extends StockInvestor
       }
     } else {
       System.out.println(name + ": has no stockmarket yet");
+    }
+    if (getBank().zombie) {
+      System.exit(0);
     }
   }
 

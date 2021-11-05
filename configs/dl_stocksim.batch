@@ -8,3 +8,4 @@ addagent InvestmentCompany Bank-4 exchange=ThreadSE initialDeposit=475 strategy=
 repeat 2 addagent StockInvestor Bank-4 initialDeposit=1000
 repeat 2 addagent StockInvestor Bank-4 initialDeposit=500
 addagent PythonStockInvestor Bank-4 initialDeposit=500 stockmarket=AAPL
+step 10000
