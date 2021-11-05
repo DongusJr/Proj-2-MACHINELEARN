@@ -5,13 +5,15 @@ DBG[1]:Bank-4: Request Loan to Account: 1000032(R1) @ Bank-4  Deposit: 475 Ledge
 DBG[1]:New loan: 1 BankLoan 1025@ 2.0/3600 to Account: 1000032(R1) @ Bank-4  Deposit: 475 Ledger / deposit
 DBG[1]:Bank-4: Request Loan to Account: 1000035(StockInvestor-14) @ Bank-4  Deposit: 1000 Ledger / deposit for 100 @ 2 / 1
 DBG[1]:New loan: 2 BankLoan 100@ 2.0/30 to Account: 1000035(StockInvestor-14) @ Bank-4  Deposit: 1000 Ledger / deposit
+DBG[1]:Bank-4: Request Loan to Account: 1000038(PythonStockInvestor-17) @ Bank-4  Deposit: 500 Ledger / deposit for 100 @ 2 / 1
+DBG[1]:New loan: 3 BankLoan 100@ 2.0/30 to Account: 1000038(PythonStockInvestor-17) @ Bank-4  Deposit: 500 Ledger / deposit
 DBG[1]:Bank-4: Request Loan to Account: 1000034(StockInvestor-13) @ Bank-4  Deposit: 1000 Ledger / deposit for 100 @ 2 / 1
-DBG[1]:New loan: 3 BankLoan 100@ 2.0/30 to Account: 1000034(StockInvestor-13) @ Bank-4  Deposit: 1000 Ledger / deposit
+DBG[1]:New loan: 4 BankLoan 100@ 2.0/30 to Account: 1000034(StockInvestor-13) @ Bank-4  Deposit: 1000 Ledger / deposit
 DBG[2]:====================================================
 DBG[2]:Bank-4: Request Loan to Account: 1000037(StockInvestor-16) @ Bank-4  Deposit: 500 Ledger / deposit for 100 @ 2 / 1
-DBG[2]:New loan: 4 BankLoan 100@ 2.0/30 to Account: 1000037(StockInvestor-16) @ Bank-4  Deposit: 500 Ledger / deposit
+DBG[2]:New loan: 5 BankLoan 100@ 2.0/30 to Account: 1000037(StockInvestor-16) @ Bank-4  Deposit: 500 Ledger / deposit
 DBG[2]:Bank-4: Request Loan to Account: 1000036(StockInvestor-15) @ Bank-4  Deposit: 501 Ledger / deposit for 100 @ 2 / 1
-DBG[2]:New loan: 5 BankLoan 100@ 2.0/30 to Account: 1000036(StockInvestor-15) @ Bank-4  Deposit: 501 Ledger / deposit
+DBG[2]:New loan: 6 BankLoan 100@ 2.0/30 to Account: 1000036(StockInvestor-15) @ Bank-4  Deposit: 501 Ledger / deposit
 DBG[3]:====================================================
 DBG[4]:====================================================
 DBG[5]:====================================================
@@ -41,16 +43,16 @@ DBG[28]:====================================================
 DBG[29]:====================================================
 DBG[30]:====================================================
 DBG[30]:Bank-4: Request Loan to Account: 1000034(StockInvestor-13) @ Bank-4  Deposit: 1012 Ledger / deposit for 100 @ 2 / 1
-DBG[30]:New loan: 6 BankLoan 100@ 2.0/30 to Account: 1000034(StockInvestor-13) @ Bank-4  Deposit: 1012 Ledger / deposit
+DBG[30]:New loan: 7 BankLoan 100@ 2.0/30 to Account: 1000034(StockInvestor-13) @ Bank-4  Deposit: 1012 Ledger / deposit
 DBG[30]:Bank-4: Request Loan to Account: 1000037(StockInvestor-16) @ Bank-4  Deposit: 515 Ledger / deposit for 100 @ 2 / 1
-DBG[30]:New loan: 7 BankLoan 100@ 2.0/30 to Account: 1000037(StockInvestor-16) @ Bank-4  Deposit: 515 Ledger / deposit
-DBG[30]:Bank-4: Request Loan to Account: 1000035(StockInvestor-14) @ Bank-4  Deposit: 1014 Ledger / deposit for 100 @ 2 / 1
-DBG[30]:New loan: 8 BankLoan 100@ 2.0/30 to Account: 1000035(StockInvestor-14) @ Bank-4  Deposit: 1014 Ledger / deposit
-DBG[30]:Bank-4: Request Loan to Account: 1000036(StockInvestor-15) @ Bank-4  Deposit: 513 Ledger / deposit for 100 @ 2 / 1
-DBG[30]:New loan: 9 BankLoan 100@ 2.0/30 to Account: 1000036(StockInvestor-15) @ Bank-4  Deposit: 513 Ledger / deposit
+DBG[30]:New loan: 8 BankLoan 100@ 2.0/30 to Account: 1000037(StockInvestor-16) @ Bank-4  Deposit: 515 Ledger / deposit
+DBG[30]:Bank-4: Request Loan to Account: 1000035(StockInvestor-14) @ Bank-4  Deposit: 1013 Ledger / deposit for 100 @ 2 / 1
+DBG[30]:New loan: 9 BankLoan 100@ 2.0/30 to Account: 1000035(StockInvestor-14) @ Bank-4  Deposit: 1013 Ledger / deposit
+DBG[30]:Bank-4: Request Loan to Account: 1000036(StockInvestor-15) @ Bank-4  Deposit: 514 Ledger / deposit for 100 @ 2 / 1
+DBG[30]:New loan: 10 BankLoan 100@ 2.0/30 to Account: 1000036(StockInvestor-15) @ Bank-4  Deposit: 514 Ledger / deposit
+DBG[30]:Bank-4: Request Loan to Account: 1000038(PythonStockInvestor-17) @ Bank-4  Deposit: 496 Ledger / deposit for 100 @ 2 / 1
+DBG[30]:New loan: 11 BankLoan 100@ 2.0/30 to Account: 1000038(PythonStockInvestor-17) @ Bank-4  Deposit: 496 Ledger / deposit
 DBG[31]:====================================================
-DBG[31]:Bank-4: Request Loan to Account: 1000038(PythonStockInvestor-17) @ Bank-4  Deposit: 500 Ledger / deposit for 100 @ 2 / 1
-DBG[31]:New loan: 10 BankLoan 100@ 2.0/30 to Account: 1000038(PythonStockInvestor-17) @ Bank-4  Deposit: 500 Ledger / deposit
 DBG[32]:====================================================
 DBG[33]:====================================================
 DBG[34]:====================================================
@@ -80,15 +82,17 @@ DBG[57]:====================================================
 DBG[58]:====================================================
 DBG[59]:====================================================
 DBG[60]:====================================================
-DBG[60]:Bank-4: Request Loan to Account: 1000034(StockInvestor-13) @ Bank-4  Deposit: 947 Ledger / deposit for 100 @ 2 / 1
-DBG[60]:New loan: 11 BankLoan 100@ 2.0/30 to Account: 1000034(StockInvestor-13) @ Bank-4  Deposit: 947 Ledger / deposit
-DBG[60]:Bank-4: Request Loan to Account: 1000036(StockInvestor-15) @ Bank-4  Deposit: 530 Ledger / deposit for 100 @ 2 / 1
-DBG[60]:New loan: 12 BankLoan 100@ 2.0/30 to Account: 1000036(StockInvestor-15) @ Bank-4  Deposit: 530 Ledger / deposit
-DBG[60]:Bank-4: Request Loan to Account: 1000037(StockInvestor-16) @ Bank-4  Deposit: 428 Ledger / deposit for 100 @ 2 / 1
-DBG[60]:New loan: 13 BankLoan 100@ 2.0/30 to Account: 1000037(StockInvestor-16) @ Bank-4  Deposit: 428 Ledger / deposit
-DBG[60]:Bank-4: Request Loan to Account: 1000035(StockInvestor-14) @ Bank-4  Deposit: 1024 Ledger / deposit for 100 @ 2 / 1
-DBG[60]:New loan: 14 BankLoan 100@ 2.0/30 to Account: 1000035(StockInvestor-14) @ Bank-4  Deposit: 1024 Ledger / deposit
+DBG[60]:Bank-4: Request Loan to Account: 1000037(StockInvestor-16) @ Bank-4  Deposit: 517 Ledger / deposit for 100 @ 2 / 1
+DBG[60]:New loan: 12 BankLoan 100@ 2.0/30 to Account: 1000037(StockInvestor-16) @ Bank-4  Deposit: 517 Ledger / deposit
+DBG[60]:Bank-4: Request Loan to Account: 1000034(StockInvestor-13) @ Bank-4  Deposit: 1013 Ledger / deposit for 100 @ 2 / 1
+DBG[60]:New loan: 13 BankLoan 100@ 2.0/30 to Account: 1000034(StockInvestor-13) @ Bank-4  Deposit: 1013 Ledger / deposit
+DBG[60]:Bank-4: Request Loan to Account: 1000035(StockInvestor-14) @ Bank-4  Deposit: 1026 Ledger / deposit for 100 @ 2 / 1
+DBG[60]:New loan: 14 BankLoan 100@ 2.0/30 to Account: 1000035(StockInvestor-14) @ Bank-4  Deposit: 1026 Ledger / deposit
+DBG[60]:Bank-4: Request Loan to Account: 1000036(StockInvestor-15) @ Bank-4  Deposit: 527 Ledger / deposit for 100 @ 2 / 1
+DBG[60]:New loan: 15 BankLoan 100@ 2.0/30 to Account: 1000036(StockInvestor-15) @ Bank-4  Deposit: 527 Ledger / deposit
 DBG[61]:====================================================
+DBG[61]:Bank-4: Request Loan to Account: 1000038(PythonStockInvestor-17) @ Bank-4  Deposit: 494 Ledger / deposit for 100 @ 2 / 1
+DBG[61]:New loan: 16 BankLoan 100@ 2.0/30 to Account: 1000038(PythonStockInvestor-17) @ Bank-4  Deposit: 494 Ledger / deposit
 DBG[62]:====================================================
 DBG[63]:====================================================
 DBG[64]:====================================================
@@ -105,7 +109,3 @@ DBG[74]:====================================================
 DBG[75]:====================================================
 DBG[76]:====================================================
 DBG[77]:====================================================
-DBG[78]:====================================================
-DBG[79]:====================================================
-DBG[80]:====================================================
-DBG[81]:====================================================

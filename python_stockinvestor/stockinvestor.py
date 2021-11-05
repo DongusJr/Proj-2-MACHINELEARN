@@ -11,17 +11,22 @@ import os
     public long bidPrice, askPrice; // current bid and ask price of the stock on the market
     public boolean isZombie;
 '''
-
+STATEGAP = 5
 
 class PythonStockInvestorAgent(object):
     def __init__(self, name):
         self._initialize_agent(name)
         
     def _initialize_agent(self, name):
+        self.pickle_file_name = f"SarsaDict_{name}.p"
+        self.info_list_name = f"InfoList_{name}.p"
         self.name = name
         self.last_state_action = None
         self.last_state_type = None
+        self.initial_deposit = None
         self.sarsa_dict = self._get_sarsa_dict()
+        self.info_list = self._get_info_list()
+        self.max_profit = 0
         self.epsilon = 0.2
         self.alpha = 0.1
         self.gamma = 0.9998
@@ -30,21 +35,35 @@ class PythonStockInvestorAgent(object):
 
     def _get_sarsa_dict(self):
         try:
-            with open("ITurnedMyselfIntoAPickle.p", 'rb+') as pfile:
-                if os.path.getsize("ITurnedMyselfIntoAPickle.p") > 0:
+            with open(self.pickle_file_name, 'rb+') as pfile:
+                if os.path.getsize(self.pickle_file_name) > 0:
                     return pickle.load(pfile)
                 else:
                     raise FileNotFoundError
         except FileNotFoundError:
             return dict()
 
+    def _get_info_list(self):
+        try:
+            with open(self.info_list_name, 'rb+') as pfile:
+                if os.path.getsize(self.info_list_name) > 0:
+                    return pickle.load(pfile)
+                else:
+                    raise FileNotFoundError
+        except FileNotFoundError:
+            return []
+
     def _pickle_results(self):
-        with open("ITurnedMyselfIntoAPickle.p", "wb+") as pfile:
+        with open(self.pickle_file_name, "wb+") as pfile:
             pickle.dump(self.sarsa_dict, pfile)
+        with open(self.info_list_name, "wb+") as info_list_file:
+            pickle.dump(self.info_list, info_list_file)
 
     def _initialize_states(self):
         investor_states = ["bankrupt", "ownStock", "doubleStock", "noStock"]
-        market_states = ["Up", "Down"]
+        market_states = [f"{i*STATEGAP}~{(i+1)*STATEGAP}" for i in range(-20, 20)]
+        edge_market_states = [">+100", "<-100"]
+        market_states += edge_market_states
         neutral_states = ["init", "terminate"]
         return [x + y for x in investor_states for y in market_states] + neutral_states
 
@@ -58,6 +77,8 @@ class PythonStockInvestorAgent(object):
 
     # this getNextAction will be called once for each step
     def getNextAction(self, step, state):
+        if self.initial_deposit is None:
+            self.initial_deposit = state.deposit
         self._display_state(step, state)
         print("getNextAction(step = " + str(step) + ", agentid = " + str(self.name) + ", state(deposit =" + str(state.deposit) + "))")
 
@@ -75,6 +96,7 @@ class PythonStockInvestorAgent(object):
         if self.last_state_action is None:
             action = self.actions[r.randrange(len(self.actions))]
         else:
+            self.max_profit = max(self.max_profit, state.deposit - self.initial_deposit)
             action = self.get_action_for_state_type(state_type)
             if action is None:
                 print("ACTION IS NONE WHAT IS GOING ON HERE?")
@@ -87,6 +109,7 @@ class PythonStockInvestorAgent(object):
         self.last_state_action = (state, action)
         self.last_state_type = state_type
         if (state.isZombie):
+            self.info_list.append((str(step), self.max_profit, state.deposit, state.debt))
             self._pickle_results()
             self._initialize_agent(self.name)
         return action
@@ -104,25 +127,39 @@ class PythonStockInvestorAgent(object):
         for action in self.actions:
             state_action_tuple = (state_type, action)
             reward = self.sarsa_dict.get(state_action_tuple, 0)
-            if reward >= max_reward:
+            if reward != 0 and reward > max_reward:
                 max_reward = reward
                 best_action = action
-        return best_action
+        if best_action is not None:
+            return best_action
+        else:
+            return self.actions[r.randrange(len(self.actions))]
 
     def calculateRewards(self, state, last_state):
-        if int(state.deposit) + int(state.shareHolding)*int(state.bidPrice) > int(last_state.deposit) + int(last_state.shareHolding)*int(last_state.bidPrice):
-            return (int(state.deposit) + int(state.shareHolding)) - (int(last_state.deposit) + int(last_state.deposit))*0.99
-        elif int(state.debt) >= (int(state.deposit) + int(state.bidPrice)*int(state.shareHolding)) and int(last_state.debt) >= (int(last_state.deposit) + int(last_state.bidPrice)*int(last_state.shareHolding)):
-            return -100
-        elif int(state.deposit) + int(state.shareHolding)*int(state.bidPrice) < int(last_state.deposit) + int(last_state.shareHolding)*int(last_state.bidPrice):
-            return (int(state.deposit) + int(state.shareHolding)) - (int(last_state.deposit) + int(last_state.deposit))*0.01
-        else:
-            return 0
+        # if int(state.deposit) + int(state.shareHolding)*int(state.bidPrice) > int(last_state.deposit) + int(last_state.shareHolding)*int(last_state.bidPrice):
+        #     return (int(state.deposit) + int(state.shareHolding)) - (int(last_state.deposit) + int(last_state.deposit))*0.99
+        # elif int(state.debt) >= (int(state.deposit) + int(state.bidPrice)*int(state.shareHolding)) and int(last_state.debt) >= (int(last_state.deposit) + int(last_state.bidPrice)*int(last_state.shareHolding)):
+        #     return -100
+        # elif int(state.deposit) + int(state.shareHolding)*int(state.bidPrice) < int(last_state.deposit) + int(last_state.shareHolding)*int(last_state.bidPrice):
+        #     return (int(state.deposit) + int(state.shareHolding)) - (int(last_state.deposit) + int(last_state.deposit))*0.01
+        # else:
+        #     return 0
+        reward = 0
+        networth_now = state.deposit - state.debt
+        networth_before = last_state.deposit - last_state.debt
+        difference = (networth_now - networth_before)
+        reward += (state.shareHolding//2) + difference
+        return reward
+
 
     def get_state_type_from_state(self, state, last_state):
         if last_state is None or last_state.isZombie:
             return "init"
-        market_state = "Up" if int(state.askPrice) > int(last_state.askPrice) else "Down"
+        difference = int(state.askPrice) - int(last_state.askPrice)
+        if abs(difference) > 100:
+            market_state = ">+100" if difference > 0 else "<-100"
+        else:
+            market_state = f"{(difference//STATEGAP)*STATEGAP}~{(difference//STATEGAP)*STATEGAP + 5}"
         investor_state = ""
         if int(state.debt) >= (int(state.deposit) + int(state.bidPrice)*int(state.shareHolding)):
             investor_state = "bankrupt"
